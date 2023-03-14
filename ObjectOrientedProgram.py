@@ -1,29 +1,26 @@
 import random
 
 class Application:
-    code = 0
-    name = 0
-    cost = 0
-    sale = 0
-    stock = 0
-    estimate = 0
 
-    def getCode(code):
+    def getCode():
         # Asks the user to input the Product Code and checks whether the input is valid.
         codeCheck = False
         while codeCheck == False:
             code = input("Please enter the Product Code: ")
             if float(code) == int(code) and int(code) >= 100 and int(code) <= 1000:
                 codeCheck = True
+
+            else:
+                code = input("Please enter the Product Code: ")
         return code
 
-    def getName(name):
+    def getName():
         #Asks the user to input the Product Name.
         name = input("Please enter the Product Name: ")
 
         return name
 
-    def getSale(sale):
+    def getSale():
         #Asks the user to input the Product Sale Price and checks whether the input is valid.
         saleCheck = False
         while saleCheck == False:
@@ -33,7 +30,7 @@ class Application:
 
         return sale
 
-    def getCost(cost):
+    def getCost():
         #Asks the user to input the Product Manufacture Cost and checks whether the input is valid.
         costCheck = False
         while costCheck == False:
@@ -43,7 +40,7 @@ class Application:
 
         return cost
 
-    def getStock(stock):
+    def getStock():
         #Asks the user to input the Stock Level and checks whether the input is valid.
         stockCheck = False
         while stockCheck == False:
@@ -53,7 +50,7 @@ class Application:
 
         return stock
 
-    def getEstimate(estimate):
+    def getEstimate():
         #Asks the user to input the Estimated Monthly Units Manufactured and checks whether the input is valid. 
         estimateCheck = False
         while estimateCheck == False:
@@ -62,13 +59,14 @@ class Application:
                 estimateCheck = True
 
         return estimate
+
     
-    getCode()
-    getName()
-    getCost()
-    getSale()
-    getStock()
-    getEstimate()
+    code = getCode()
+    name = getName()
+    cost = getCost()
+    sale = getSale()
+    stock = getStock()
+    estimate = getEstimate()
 
 class Logic(Application):
     def printStocks():
