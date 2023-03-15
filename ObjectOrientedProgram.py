@@ -95,7 +95,7 @@ class Logic(Application):
             print("*     Stock:", stock)
             
         #Prints the net profit of the stock statement.
-        netProfit = (totalSold * float(sale)) - (estimate * float(cost))
+        netProfit = round((totalSold * float(sale)) - (int(estimate) * float(cost)), 2)
         print("Net Profit: ", netProfit, " CAD")
 
     printStocks()
